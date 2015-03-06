@@ -59,6 +59,7 @@ public class AIProject2015 extends JFrame implements Runnable,NeuralReportable {
    * The neural network.
    */
   KohonenNetwork net;
+  KohonenNetwork net2;
 
   /**
    * The background thread used for training.
@@ -511,12 +512,16 @@ public class AIProject2015 extends JFrame implements Runnable,NeuralReportable {
       net = new KohonenNetwork(inputNeuron,outputNeuron,this);
       net.setTrainingSet(set);
       net.learn();
+        //TODO: this section needs to be done when a winner is found on each cycle
+        //Add each winner then retrain this layer and rerun on this layer.
+      net2 = new KohonenNetwork(inputNeuron,outputNeuron,this); 
+      net2.setTrainingSet(set);
+      net2.learn();
     } catch ( Exception e ) {
       JOptionPane.showMessageDialog(this,"Error: " + e,
                                     "Training",
                                     JOptionPane.ERROR_MESSAGE);
     }
-
   }
 
   /**
