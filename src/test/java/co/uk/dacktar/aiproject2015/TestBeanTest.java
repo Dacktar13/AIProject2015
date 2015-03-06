@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.dacktar13.aiproject2015;
+package co.uk.dacktar.aiproject2015;
 
+import co.uk.dacktar.aiproject2015.TestBean;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -14,7 +15,7 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author mat
+ * @author Seth Wheeler
  */
 public class TestBeanTest {
     
