@@ -26,7 +26,8 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "Memory.findAll", query = "SELECT m FROM Memory m"),
     @NamedQuery(name = "Memory.findById", query = "SELECT m FROM Memory m WHERE m.id = :id"),
     @NamedQuery(name = "Memory.findByNodes", query = "SELECT m FROM Memory m WHERE m.nodes = :nodes"),
-    @NamedQuery(name = "Memory.findByWeight", query = "SELECT m FROM Memory m WHERE m.weight = :weight")})
+    @NamedQuery(name = "Memory.findByWeight", query = "SELECT m FROM Memory m WHERE m.weight = :weight"),
+    @NamedQuery(name = "Memory.findBySymbol", query = "SELECT m FROM Memory m WHERE m.symbol = :symbol")})
 public class Memory implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
@@ -39,6 +40,8 @@ public class Memory implements Serializable {
     @Basic(optional = false)
     @Column(name = "WEIGHT", nullable = false)
     private int weight;
+    @Column(name = "SYMBOL")
+    private Character symbol;
 
     public Memory() {
     }
@@ -77,6 +80,14 @@ public class Memory implements Serializable {
         this.weight = weight;
     }
 
+    public Character getSymbol() {
+        return symbol;
+    }
+
+    public void setSymbol(Character symbol) {
+        this.symbol = symbol;
+    }
+
     @Override
     public int hashCode() {
         int hash = 0;
@@ -99,7 +110,7 @@ public class Memory implements Serializable {
 
     @Override
     public String toString() {
-        return "com.dacktar13.database.Memory[ id=" + id + " ]";
+        return "co.uk.dacktar.database.Memory[ id=" + id + " ]";
     }
     
 }
