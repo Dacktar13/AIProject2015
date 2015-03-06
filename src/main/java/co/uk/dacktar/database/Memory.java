@@ -20,7 +20,7 @@ import javax.xml.bind.annotation.XmlRootElement;
  * @author Seth Wheeler
  */
 @Entity
-@Table(name = "MEMORY", catalog = "", schema = "NEURON")
+@Table(catalog = "", schema = "NEURON")
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Memory.findAll", query = "SELECT m FROM Memory m"),
@@ -32,15 +32,14 @@ public class Memory implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @Basic(optional = false)
-    @Column(name = "ID", nullable = false)
+    @Column(nullable = false)
     private Integer id;
     @Basic(optional = false)
-    @Column(name = "NODES", nullable = false, length = 64)
+    @Column(nullable = false, length = 64)
     private String nodes;
     @Basic(optional = false)
-    @Column(name = "WEIGHT", nullable = false)
+    @Column(nullable = false)
     private int weight;
-    @Column(name = "SYMBOL")
     private Character symbol;
 
     public Memory() {
