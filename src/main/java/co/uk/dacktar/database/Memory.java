@@ -40,7 +40,9 @@ public class Memory implements Serializable {
     @Basic(optional = false)
     @Column(nullable = false)
     private int weight;
-    private Character symbol;
+    @Basic(optional = false)
+    @Column(nullable = false)
+    private String symbol;
 
     public Memory() {
     }
@@ -49,10 +51,11 @@ public class Memory implements Serializable {
         this.id = id;
     }
 
-    public Memory(Integer id, String nodes, int weight) {
+    public Memory(Integer id, String nodes, int weight, String symbol) {
         this.id = id;
         this.nodes = nodes;
         this.weight = weight;
+        this.symbol = symbol;
     }
 
     public Integer getId() {
@@ -79,11 +82,11 @@ public class Memory implements Serializable {
         this.weight = weight;
     }
 
-    public Character getSymbol() {
+    public String getSymbol() {
         return symbol;
     }
 
-    public void setSymbol(Character symbol) {
+    public void setSymbol(String symbol) {
         this.symbol = symbol;
     }
 

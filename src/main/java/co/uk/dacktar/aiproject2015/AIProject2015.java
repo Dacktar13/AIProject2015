@@ -24,7 +24,6 @@ import javax.swing.SwingUtilities;
  * AIProject2015
  *
  * @author Seth Wheeler
- * @addapted from Jeff Heaton
  * @version 1.1
  */
 public class AIProject2015 extends JFrame implements Runnable,NeuralReportable {
@@ -82,7 +81,7 @@ public class AIProject2015 extends JFrame implements Runnable,NeuralReportable {
     getContentPane().add(sample);
 
     //{{INIT_CONTROLS
-    setTitle("Java Neural Network");
+    setTitle("Neural Network with DB conectivity");
     getContentPane().setLayout(null);
     setSize(405,382);
     setVisible(false);

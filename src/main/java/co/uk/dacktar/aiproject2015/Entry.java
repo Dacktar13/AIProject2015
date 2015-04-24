@@ -11,7 +11,6 @@ import java.awt.image.*;
  * Entry
  *
  * @author Seth Wheeler
- * @addapted from Jeff Heaton
  * @version 1.1
  */
 public class Entry extends JPanel {
